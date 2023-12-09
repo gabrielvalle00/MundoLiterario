@@ -1,0 +1,78 @@
+:root{
+    --red:#4CA1AF;
+    --white:#fff;
+    --dark:#1e1c2a;
+}
+
+body{
+    color: var(--dark);
+}
+
+.home-text {
+    max-width: 1000px;    
+    position: fixed;
+    padding: 20px 140px;
+}
+
+.home-text h4 {
+    font-size: 1.5rem;
+    color: var(--red);
+    margin-bottom: 1rem;
+}
+
+.home-text h2 {
+    font-size: 64px;
+    margin-bottom: 2rem;
+    line-height: 2.5rem;
+}
+
+.home-text p {
+    margin-bottom: 1rem;
+}
+
+.home-btn {
+    display: inline-block;
+    padding: 15px 45px;
+    background: var(--red);
+    color: var(--white);
+    border-radius: 10px;
+    font-weight: 700;
+    transition: all 0.5s;
+    text-decoration: none;
+}
+
+.home-btn:hover {
+    background: #C4E0E5;
+}
+
+.icons {
+    display: flex;
+    justify-content: justify;
+    margin-top: 20px;
+}
+
+.icons a {
+    display: inline-block;
+    margin-left: 45px;
+    background: #030705;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    transition:  0.3s ease-in-out;
+}
+
+.icons img {
+    width: 50px; 
+}
+
+.icons a:hover{
+    background: #000000b1;
+    transform: translateY(-10px);
+}
+
+.icons a img{
+    filter: invert(1);
+    transform: scale(0.5);
+}
