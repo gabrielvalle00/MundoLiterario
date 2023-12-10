@@ -65,35 +65,66 @@
 
     </div>
 
-    {{!-- <div class="container_cadastro">
+    <div class="container_cadastro">
 
-        <h1>Area de cadastramento do produto:</h1>
+        <h2>Area de cadastramento de livros:</h2>
 
         <form id="form" action="cadastroProduto" method="post">
 
-            <label for="titulo">Titulo:</label>
-            <input type="text" name="titulo" required="">
+            <div class="inputGroup">
+                <input type="text" name="titulo" required="">
+                <label for="name">Titulo:</label>
+            </div>
 
-            <label for="descricao">Descriçao:</label>
-            <input type="text" name="descricao" required="">
+            <div class="inputGroup">
+                <input type="text" id="descricao" name="descricao" required="" cols="3">
+                <label for="descricao">Descrição:</label>
+            </div>
 
-            <label for="precoD">Preço - Capa dura:</label>
-            <input type="text" name="preçoD" required="">
+            <div class="inputGroup">
+                <input type="text" id="valorD" class="valorInput" name="preçoD" required="">
+                <label for="precoD">Preço - Capa dura:</label>
+            </div>
 
-            <label for="precoC">Preço - Capa comum:</label>
-            <input type="text" name="precoC" required="">
+            <div class="inputGroup">
+                <input type="text" id="valorC" class="valorInput" name="preçoC" required="">
+                <label for="precoC">Preço - Capa comum:</label>
+            </div>
 
-            <label for="precoE">Preço - Ebook:</label>
-            <input type="text" name="precoE" required="">
+            <div class="inputGroup">
+                <input type="text" id="valorE" class="valorInput" name="preçoE" required="">
+                <label for="precoE">Preço - Ebook:</label>
+            </div>
 
-            <label for="img">Adicione uma foto para apresentar o produto:</label>
-            <button>Selecionar imagem</button>
+            <div class="grid w-full max-w-xs items-center gap-1.5">
+                <label id="texto" for="img"
+                    class="text-sm text-gray-400 font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Capa
+                    do livro:</label>
+                <input name="img" id="picture" type="file"
+                    class="flex h-10 w-full rounded-md border border-input bg-white px-3 py-2 text-sm text-gray-400 file:border-0 file:bg-transparent file:text-gray-600 file:text-sm file:font-medium">
+            </div>
+
+            <input type="submit" value="Cadastrar" id="enviar">
 
         </form>
 
-    </div> --}}
-
-
-
+    </div>
 
 </div>
+
+<script>
+    const valorInputs = document.getElementsByClassName('valorInput');
+
+    for (let i = 0; i < valorInputs.length; i++) {
+        valorInputs[i].addEventListener('input', function (event) {
+            let inputValue = event.target.value;
+
+            inputValue = inputValue.replace(/[^0-9]/g, '');
+
+            inputValue = inputValue.replace(/(\d)(\d{2})$/, "$1,$2");
+            inputValue = inputValue.replace(/(?=(\d{3})+(\D))\B/g, ".");
+
+            event.target.value = "R$ " + inputValue;
+        });
+    }
+</script>
