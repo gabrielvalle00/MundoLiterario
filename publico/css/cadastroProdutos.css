@@ -1,22 +1,125 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.container{
+.container {
     position: relative;
     width: 100%;
 }
 
-body{
+body {
     min-height: 100vh;
     overflow-x: hidden;
 }
 
+/* area do formulario */
+
+.container_cadastro {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 40px;
+    background-color: #ffffff;
+    height: 400px;
+    width: 50%;
+    margin-left: 500px;
+    margin-top: 36px;
+    position: relative;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h2 {
+    color: black;
+    height: 60px;
+    text-align: center;
+    padding-top: 15px;
+}
+
+#texto{
+    font-size: 15px;
+}
+
+/* inputs e labels */
+
+.inputGroup {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0.3em 0 0.3em 0;
+    width: 100%;
+    position: relative;
+    margin-top: 15px;
+}
+
+.inputGroup input {
+    font-size: 100%;
+    padding: 0.3em;
+    outline: none;
+    border: 2px solid rgb(200, 200, 200);
+    background-color: transparent;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.inputGroup label {
+    font-size: 100%;
+    position: absolute;
+    left: 0;
+    padding: 0.3em;
+    margin-left: 0.5em;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    color: #1e1c2a;
+}
+
+.inputGroup :is(input:focus, input:valid)~label {
+    transform: translateY(-80%) scale(.9);
+    margin: 0em;
+    padding: 0.4em;
+}
+
+.inputGroup :is(input:focus, input:valid) {
+    border-color: #1e1c2a;
+}
+
+/* botao de enviar */
+
+#enviar {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #5d9e7e26;
+    color: #1a5eaa;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    border: 2px solid #1a5eaa;
+    border-bottom-width: 4px;
+    width: 110px;
+    font-weight: bold;
+    font-family: "Poppins", sans-serif;
+    margin: 10px auto;
+}
+
+#enviar:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+    border-bottom-width: 6px;
+}
+
+#enviar:active {
+    border-bottom-width: 2px;
+    filter: brightness(0.9);
+    transform: translateY(2px);
+}
+
 /* navegador */
 
-.navegador{
+.navegador {
     position: fixed;
     width: 300px;
     height: 100%;
@@ -27,31 +130,31 @@ body{
     top: 78px;
 }
 
-.navegador ul{
+.navegador ul {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
 }
 
-.navegador ul li{
-    position:relative;
+.navegador ul li {
+    position: relative;
     width: 100%;
     list-style: none;
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
 }
 
-.navegador ul li:hover{
+.navegador ul li:hover {
     background-color: #E6F0EB;
 }
 
-.navegador ul li:nth-child(1){
+.navegador ul li:nth-child(1) {
     margin-bottom: 40px;
     pointer-events: none;
 }
 
-.navegador ul li a{
+.navegador ul li a {
     position: relative;
     display: block;
     width: 100%;
@@ -60,11 +163,11 @@ body{
     color: #fff;
 }
 
-.navegador ul li:hover a{
+.navegador ul li:hover a {
     color: black;
 }
 
-.navegador ul li a .icon{
+.navegador ul li a .icon {
     position: relative;
     display: block;
     min-width: 60px;
@@ -73,14 +176,14 @@ body{
     text-align: center;
 }
 
-.navegador ul li a .icon ion-icon{
+.navegador ul li a .icon ion-icon {
     font-size: 1.75rem;
 }
 
 .navegador ul li a .title {
     position: relative;
     display: block;
-    padding:  0 10px;
+    padding: 0 10px;
     height: 60px;
     line-height: 60px;
     text-align: start;
@@ -89,7 +192,7 @@ body{
 
 /* curvando para fora */
 
-.navegador ul li:hover a::before{
+.navegador ul li:hover a::before {
     content: "";
     position: absolute;
     right: 0;
@@ -102,7 +205,7 @@ body{
     pointer-events: none;
 }
 
-.navegador ul li:hover a::after{
+.navegador ul li:hover a::after {
     content: "";
     position: absolute;
     right: 0;
@@ -116,7 +219,7 @@ body{
 }
 
 .navegador ul li:nth-child(3) {
-    background-color: #E6F0EB; 
+    background-color: #E6F0EB;
 }
 
 .navegador ul li:nth-child(3)::before {
@@ -148,14 +251,3 @@ body{
 .navegador ul li:nth-child(3) a {
     color: black;
 }
-
-/* footer */
-
-footer{
-    display: block;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-}
-
