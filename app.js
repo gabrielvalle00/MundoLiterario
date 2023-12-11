@@ -1,8 +1,5 @@
 //SE ALGUEM MEXER SEM A AUTORZAÇAO DA >>>THATA<<< VAI LEVAR 3 COICES DE ADVERTENCIA
 
-// import express from 'express';
-// import { engine } from 'express-handlebars';
-
 const express = require('express'); //Importando express
 const { engine } = require('express-handlebars') //Importando express-handlebars
 
@@ -11,8 +8,6 @@ const cadastroController = require('./controller/cadastro.controller');
 const contatoController = require('./controller/contato.controller');
 
 const funcionarioController = require('./controller/funcionario.controller');
-
-const estoqueController = require('./controller/estoque.controller');
 
 const cadastroProdutosController = require('./controller/cadastroprodutos.controller')
 
@@ -60,8 +55,6 @@ app.get('/cadastro', cadastroController.cadastro);
 app.get('/contato', contatoController.contato);
 
 app.get('/funcionario', funcionarioController.funcionario);
-
-app.get('/estoque', estoqueController.estoque);
 
 app.get('/cadastroProdutos', cadastroProdutosController.cadastroProdutos);
 
