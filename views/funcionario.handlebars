@@ -63,3 +63,35 @@
     </div>
 
 </div>
+
+<div class="container_tabela">
+
+    <div class="estoque">
+
+        <h2>Livros disponiveis na loja:</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <td>Id:</td>
+                    <td>Titulo:</td>
+                    <td>Capa dura:</td>
+                    <td>Capa comum:</td>
+                    <td>Ebook:</td>
+                </tr>
+            </thead>
+
+            {{#each dados}}
+            <tr>
+                <td>{{id}}</td>
+                <td>{{titulo}}</td>
+                <td>{{precoD}}</td>
+                <td>{{precoC}}</td>
+                <td>{{precoE}}</td>
+            </tr>
+            {{/each}}
+        </table>
+
+    </div>
+
+</div>

@@ -149,6 +149,42 @@ body{
     color: black;
 }
 
+/* area da tabela */
+
+.container_tabela {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 40px;
+    background-color: #ffffff;
+    height: 400px;
+    width: 50%;
+    margin-left: 500px;
+    margin-top: 36px;
+    position: relative;
+}
+
+table {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h2 {
+    color: black;
+    height: 60px;
+    text-align: center;
+    padding-top: 15px;
+}
+
+tr{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 70%;
+}
+
 /* footer */
 
 footer{

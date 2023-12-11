@@ -1,6 +1,11 @@
+const crud = require('../models/crud');
+const filePath = './data/db.cadastroprodutos.json';
+
 const funcionario = (req, res) => {
-    res.render('funcionario');
+
+    let livros = crud.read(filePath);
+    res.render('funcionario', { expressHndBrs: true, dados: livros });
+    
 };
 
 module.exports = { funcionario };
-
