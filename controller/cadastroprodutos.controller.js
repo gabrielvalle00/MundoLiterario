@@ -18,7 +18,8 @@ const cadastroProdutosCreate = (req, res) => {
     crud.read(filePath);
     livros.id = crud.verificaId();
     crud.create(livros, filePath);
-    res.redirect('/funcionario');
+
+    res.redirect('/cadastroprodutos');
 };
 
 module.exports = { cadastroProdutos , cadastroProdutosCreate };

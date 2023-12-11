@@ -104,7 +104,7 @@
                     class="flex h-10 w-full rounded-md border border-input bg-white px-3 py-2 text-sm text-gray-400 file:border-0 file:bg-transparent file:text-gray-600 file:text-sm file:font-medium">
             </div>
 
-            <input type="submit" value="Cadastrar" id="enviar" onclick="abrirModal()">
+            <input type="submit" value="Cadastrar" id="enviar">
 
         </form>
 
@@ -141,25 +141,25 @@
         }
     }
 
-        function fecharModal() {
-            document.getElementById('modalContainer').style.display = 'none';
-            document.getElementById('modal').style.display = 'none';
+    function fecharModal() {
+        document.getElementById('modalContainer').style.display = 'none';
+        document.getElementById('modal').style.display = 'none';
+    }
+
+    function validaFormulario() {
+        let campo1 = document.getElementById('titulo').value;
+        let campo2 = document.getElementById('descricao').value;
+        let campo3 = document.getElementById('valorD').value;
+        let campo4 = document.getElementById('valorC').value;
+        let campo5 = document.getElementById('valorE').value;
+
+        if (campo1 === "" || campo2 === "" || campo3 === "" || campo4 === "" || campo5 === "") {
+            alert("Preencha todos os campos antes de tentar enviar o formuario.");
+            return false;
         }
 
-        function validaFormulario() {
-            let campo1 = document.getElementById('titulo').value;
-            let campo2 = document.getElementById('descricao').value;
-            let campo3 = document.getElementById('valorD').value;
-            let campo4 = document.getElementById('valorC').value;
-            let campo5 = document.getElementById('valorE').value;
-
-            if (campo1 === "" || campo2 === "" || campo3 === "" || campo4 === "" || campo5 === "") {
-                alert("Preencha todos os campos antes de tentar enviar o formuario.");
-                return false;
-            }
-
-            return true;
-        }
+        return true;
+    }
 
 
 </script>
