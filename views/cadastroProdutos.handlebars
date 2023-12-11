@@ -65,15 +65,15 @@
 
     </div>
 
-    <div class="container_cadastro">
+    <div class="container_cadastro" onsubmit="validaFormulario()">
 
         <h2>Area de cadastramento de livros:</h2>
 
-        <form id="form" action="cadastroProduto" method="post">
+        <form id="form" action="cadastroProdutos" method="post">
 
             <div class="inputGroup">
-                <input type="text" name="titulo" required="">
-                <label for="name">Titulo:</label>
+                <input id="titulo" type="text" name="titulo" required="">
+                <label for="titulo">Titulo:</label>
             </div>
 
             <div class="inputGroup">
@@ -82,17 +82,17 @@
             </div>
 
             <div class="inputGroup">
-                <input type="text" id="valorD" class="valorInput" name="preçoD" required="">
+                <input type="text" id="valorD" class="valorInput" name="precoD" required="">
                 <label for="precoD">Preço - Capa dura:</label>
             </div>
 
             <div class="inputGroup">
-                <input type="text" id="valorC" class="valorInput" name="preçoC" required="">
+                <input type="text" id="valorC" class="valorInput" name="precoC" required="">
                 <label for="precoC">Preço - Capa comum:</label>
             </div>
 
             <div class="inputGroup">
-                <input type="text" id="valorE" class="valorInput" name="preçoE" required="">
+                <input type="text" id="valorE" class="valorInput" name="precoE" required="">
                 <label for="precoE">Preço - Ebook:</label>
             </div>
 
@@ -104,12 +104,19 @@
                     class="flex h-10 w-full rounded-md border border-input bg-white px-3 py-2 text-sm text-gray-400 file:border-0 file:bg-transparent file:text-gray-600 file:text-sm file:font-medium">
             </div>
 
-            <input type="submit" value="Cadastrar" id="enviar">
+            <input type="submit" value="Cadastrar" id="enviar" onclick="abrirModal()">
 
         </form>
 
     </div>
 
+</div>
+
+<div id="modal"></div>
+
+<div id="modalContainer">
+    <p>Pedido cadastrado, verifique a aba de ESTOQUE</p>
+    <button onclick="fecharModal()">Fechar</button>
 </div>
 
 <script>
@@ -127,4 +134,32 @@
             event.target.value = "R$ " + inputValue;
         });
     }
+
+    function abrirModal() {
+        if (validaFormulario()) {
+            document.getElementById('modalContainer').style.display = 'block';
+        }
+    }
+
+        function fecharModal() {
+            document.getElementById('modalContainer').style.display = 'none';
+            document.getElementById('modal').style.display = 'none';
+        }
+
+        function validaFormulario() {
+            let campo1 = document.getElementById('titulo').value;
+            let campo2 = document.getElementById('descricao').value;
+            let campo3 = document.getElementById('valorD').value;
+            let campo4 = document.getElementById('valorC').value;
+            let campo5 = document.getElementById('valorE').value;
+
+            if (campo1 === "" || campo2 === "" || campo3 === "" || campo4 === "" || campo5 === "") {
+                alert("Preencha todos os campos antes de tentar enviar o formuario.");
+                return false;
+            }
+
+            return true;
+        }
+
+
 </script>
