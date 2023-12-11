@@ -1,0 +1,68 @@
+:root {
+    --red: #4CA1AF;
+    --white: #fff;
+    --dark: #1e1c2a;
+}
+
+body{
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.formulario {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 400px;
+    margin-bottom: 300px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+button {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #5d9e7e26;
+    color: #1a5eaa;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    border: 2px solid #1a5eaa;
+    border-bottom-width: 4px;
+    width: 100%;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+button:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+    border-bottom-width: 6px;
+}
+
+button:active {
+    border-bottom-width: 2px;
+    filter: brightness(0.9);
+    transform: translateY(2px);
+}
