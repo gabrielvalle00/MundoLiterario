@@ -1,0 +1,29 @@
+{{#section 'styles'}}
+<link rel="stylesheet" href="css/estoque.css">
+{{/section}}
+
+<h2>Livros disponiveis na loja:</h2>
+
+<table>
+    <thead>
+        <tr>
+            <td>Id:</td>
+            <td>Titulo:</td>
+            <td>Capa dura:</td>
+            <td>Capa comum:</td>
+            <td>Ebook:</td>
+        </tr>
+    </thead>
+
+    {{#each dados}}
+        <tr>
+            <td>{{id}}</td>
+            <td>{{titulo}}</td>
+            <td>{{valorD}}</td>
+            <td>{{valorC}}</td>
+            <td>{{valorE}}</td>
+        </tr>
+    {{/each}}
+
+</table>
+
