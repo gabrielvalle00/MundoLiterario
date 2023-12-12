@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({extended:false}));
 const cadastroProdutos = (req, res) => {
     res.render('cadastroProdutos');
 };
-
+  
 const cadastroProdutosCreate = (req, res) => {
     let livros = new Livros(req.body);
     crud.read(filePath);
