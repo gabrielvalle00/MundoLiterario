@@ -4,7 +4,7 @@
 
 
 
-<form id="cadastroForm">
+<form id="cadastroForm" action="cadastro" method="post">
 
 
     <label for="nome">Nome:</label>
@@ -29,46 +29,7 @@
         <option value="outro">Outro</option>
     </select>
 
-    <button type="button" onclick="adicionarCadastro()">Cadastrar</button>
+    <input type="submit" value="Cadastra">
 </form>
 
 
-
-<script>
-
-function adicionarCadastro() {
-    const nome = document.getElementById('nome').value;
-    const email = document.getElementById('email').value;
-    const telefone = document.getElementById('telefone').value;
-    const senha = document.getElementById('senha').value;
-    const confirmaSenha = document.getElementById('confirmaSenha').value;
-    const genero = document.getElementById('genero').value;
-
-    // Construa um objeto com os dados do formulário
-    const novoCadastro = {
-        nome,
-        email,
-        telefone,
-        senha,
-        confirmaSenha,
-        genero
-    };
-
-    // Envia os dados para o servidor usando fetch
-    fetch('/data/db.cadastro', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(novoCadastro),
-    })
-    .then(response => response.text())
-    .then(message => {
-        alert(message);
-        // Limpe o formulário após o envio bem-sucedido
-        document.getElementById('cadastroForm').reset();
-    })
-    .catch(error => console.error('Erro:', error));
-}
-
-</script>

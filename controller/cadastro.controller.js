@@ -2,9 +2,9 @@ const express = require('express');
 const app = express();
 const crud = require('../models/crud'); //importando as funçoes criadas dentro do crud
 
-const Cadastro = require('../models/cadastro.models'); //utilizando o constructor da classe Livros
+const Cadastro = require('../models/cadastro.models'); //utilizando o constructor da classe Cadastro
 const bodyParser = require('body-parser');
-const filePath = "./data/db.cadastro.json"; //é AQUI que faz com que seja criado o arquivo json com os produtos
+const filePath = "./data/db.cadastroCliente.json"; //é AQUI que faz com que seja criado o arquivo json com os produtos
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
@@ -18,7 +18,7 @@ const cadastroCreate = (req, res) => {
     crud.read(filePath);
     cadastro.id = crud.verificaId();
     crud.create(cadastro, filePath);
-    res.redirect('/funcionario');
+    res.redirect('/login');
 };
 
 module.exports = { cadastro , cadastroCreate };
