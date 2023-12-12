@@ -36,7 +36,7 @@ select {
     box-sizing: border-box;
 }
 
-button {
+#bt {
     cursor: pointer;
     transition: all 0.3s ease;
     background-color: #5d9e7e26;
@@ -50,13 +50,13 @@ button {
     margin-top: 10px;
 }
 
-button:hover {
+#bt :hover {
     filter: brightness(1.1);
     transform: translateY(-1px);
     border-bottom-width: 6px;
 }
 
-button:active {
+#bt :active {
     border-bottom-width: 2px;
     filter: brightness(0.9);
     transform: translateY(2px);
