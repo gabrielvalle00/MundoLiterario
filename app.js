@@ -72,8 +72,6 @@ app.post('/cadastroProdutos', cadastroProdutosController.cadastroProdutosCreate)
 
 app.post('/cadastro', cadastroController.cadastroCreate);
 
-
-
 //porta
 app.listen(port, () => {
     console.log(`Servidor rodando na porta ${port}.`);

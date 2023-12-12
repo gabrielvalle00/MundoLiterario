@@ -14,6 +14,10 @@ body{
     overflow-x: hidden;
 }
 
+/* tabela */
+
+
+
 /* navegador */
 
 .navegador{
@@ -151,38 +155,36 @@ body{
 
 /* area da tabela */
 
-.container_tabela {
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    border-radius: 40px;
-    background-color: #ffffff;
-    height: 400px;
-    width: 50%;
-    margin-left: 500px;
-    margin-top: 36px;
-    position: relative;
-}
-
-table {
-    display: flex;
-    flex-direction: column;
-    height: 300px;
-    width: 70%;
-    margin: 0 auto;
-    text-align: center;
-}
-
 h2 {
     color: black;
     height: 60px;
     text-align: center;
-    padding-top: 15px;
 }
 
-tr{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+.estoque{
     width: 70%;
+    max-height: 400px;
+    text-align: center;
+    margin: 40px 25%;
+    overflow: scroll;
+}
+
+table{
+    width: 100%;
+    background-color: #fafafa;
+    text-align: center;
+    border-spacing: 0;
+    border-radius: 12px;
+}
+
+th,td{
+    padding: 12px 15px;
+}
+
+th{
+    background: #4CA1AF;
+    color: black;
+    text-transform: uppercase;
 }
 
 /* footer */
@@ -194,4 +196,3 @@ footer{
     left: 0;
     width: 100%;
 }
-
