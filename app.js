@@ -5,6 +5,8 @@ const { engine } = require('express-handlebars') //Importando express-handlebars
 
 const cadastroController = require('./controller/cadastro.controller');
 
+const cadastroClienteController = require('./controller/cadastroCliente.controller');
+
 const contatoController = require('./controller/contato.controller');
 
 const funcionarioController = require('./controller/funcionario.controller');
@@ -56,6 +58,8 @@ app.get('/contato', contatoController.contato);
 
 app.get('/funcionario', funcionarioController.funcionario);
 
+app.get('/cadastroCliente', cadastroClienteController.cadastroCliente);
+
 app.get('/cadastroProdutos', cadastroProdutosController.cadastroProdutos);
 
 app.get('/pedidosFeitos', pedidosFeitosController.pedidosFeitos);
@@ -65,6 +69,10 @@ app.get('/login', loginController.login);
 app.get('/loja', lojaController.loja);
 
 app.post('/cadastroProdutos', cadastroProdutosController.cadastroProdutosCreate); //se nao existir essa linha aqui (app.post) o formulario nao tem pra onde ir e vai dar erro
+
+app.post('/cadastro', cadastroController.cadastroCreate);
+
+
 
 //porta
 app.listen(port, () => {
