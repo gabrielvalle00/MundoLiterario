@@ -1,4 +1,3 @@
-const { realpathSync } = require("fs");
 
 class Cadastro {
     constructor(body) {
@@ -12,7 +11,6 @@ class Cadastro {
 
   
     }
-
     
 
 }
