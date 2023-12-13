@@ -64,13 +64,15 @@ app.get('/pedidosFeitos', pedidosFeitosController.pedidosFeitos);
 
 app.get('/login', loginController.login);
 
-app.post('/loginValida', loginController.loginValida);
-
 app.get('/loja', lojaController.loja);
 
 app.post('/cadastroProdutos', cadastroProdutosController.cadastroProdutosCreate); //se nao existir essa linha aqui (app.post) o formulario nao tem pra onde ir e vai dar erro
 
 app.post('/cadastro', cadastroController.cadastroCreate);
+
+app.post('/loginValida', loginController.loginValida);
+
+app.post('/login', loginController.loginCreate);
 
 //porta
 
