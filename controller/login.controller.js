@@ -21,9 +21,9 @@ const loginCreate = (req, res) => {
     // res.redirect('/login');
 
     //validando com json
-    res.render('home', { dadoslogin: 'Thata', login:true,funcionario:true});
+    res.render('home', { dadoslogin: 'Perfil', login:true,funcionario:true});
 }
 
 
 
-module.exports = { login, loginValida , loginCreate };
+module.exports = { login, loginCreate };
