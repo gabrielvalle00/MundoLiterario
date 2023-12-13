@@ -1,4 +1,3 @@
-
 class Cadastro {
     constructor(body) {
         this.id = body.id
@@ -8,10 +7,6 @@ class Cadastro {
         this.senha = body.senha;
         this.confirmaSenha = body.confirmaSenha;
         this.genero = body.genero;
-
-  
     }
-    
-
 }
 module.exports = Cadastro;
