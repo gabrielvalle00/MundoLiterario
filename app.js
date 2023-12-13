@@ -70,8 +70,6 @@ app.post('/cadastroProdutos', cadastroProdutosController.cadastroProdutosCreate)
 
 app.post('/cadastro', cadastroController.cadastroCreate);
 
-app.post('/loginValida', loginController.loginValida);
-
 app.post('/login', loginController.loginCreate);
 
 //porta
