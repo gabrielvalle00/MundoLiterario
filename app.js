@@ -1,5 +1,3 @@
-//SE ALGUEM MEXER SEM A AUTORZAÇAO DA >>>THATA<<< VAI LEVAR 3 COICES DE ADVERTENCIA
-
 const express = require('express'); //Importando express
 const { engine } = require('express-handlebars') //Importando express-handlebars
 
@@ -66,6 +64,8 @@ app.get('/pedidosFeitos', pedidosFeitosController.pedidosFeitos);
 
 app.get('/login', loginController.login);
 
+app.post('/loginValida', loginController.loginValida);
+
 app.get('/loja', lojaController.loja);
 
 app.post('/cadastroProdutos', cadastroProdutosController.cadastroProdutosCreate); //se nao existir essa linha aqui (app.post) o formulario nao tem pra onde ir e vai dar erro
@@ -73,8 +73,7 @@ app.post('/cadastroProdutos', cadastroProdutosController.cadastroProdutosCreate)
 app.post('/cadastro', cadastroController.cadastroCreate);
 
 //porta
+
 app.listen(port, () => {
     console.log(`Servidor rodando na porta ${port}.`);
 });
-
-//SE ALGUEM MEXER SEM A AUTORZAÇAO DA >>>THATA<<< VAI LEVAR 3 COICES DE ADVERTENCIA

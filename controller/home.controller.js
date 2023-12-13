@@ -1,5 +1,5 @@
 const home = (req, res) => {
-    res.render('home');
+    res.render('home',{funcionario:false});
 };
 
 module.exports = { home };
