@@ -9,6 +9,10 @@ body{
     overflow-x: hidden;
 }
 
+h2{
+    text-align: center;
+}
+
 .container {
     display: flex;
     justify-content: center;
@@ -21,6 +25,7 @@ body{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
     width: 400px;
+    height: 440px;
     margin-top: 40px;
 }
 
@@ -43,7 +48,7 @@ textarea {
     resize: none; /* Impede o redimensionamento da textarea */
 }
 
-button {
+#btn {
     cursor: pointer;
     transition: all 0.3s ease;
     background-color: #5d9e7e26;
@@ -52,18 +57,19 @@ button {
     border-radius: 1rem;
     border: 2px solid #1a5eaa;
     border-bottom-width: 4px;
-    width: 100%;
+    width: 200px;
     font-weight: bold;
-    margin-top: 10px;
+    font-family: "Poppins", sans-serif;
+    margin: auto 22%;
 }
 
-button:hover {
+#btn:hover {
     filter: brightness(1.1);
     transform: translateY(-1px);
     border-bottom-width: 6px;
 }
 
-button:active {
+#btn:active {
     border-bottom-width: 2px;
     filter: brightness(0.9);
     transform: translateY(2px);
