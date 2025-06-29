@@ -21,9 +21,23 @@ const loginCreate = (req, res) => {
     // res.redirect('/login');
 
     //validando com json
-    res.render('home', { dadoslogin: 'Perfil', login:true,funcionario:true});
+    res.render('home', { dadoslogin: 'ADM', login:true,funcionario:true});
 }
 
+const loginEntrar = (req, res) => {
+
+    const { email, senha } = req.body;
+    console.log(email, senha, req.body);
+    if (email === 'Thata@git.com' && senha === '1234') { // Ajustei para senha ser uma string
+        console.log('Acessou login entrar');
+        // req.session.user = usuario;
+        res.redirect('/funcionario');
+
+    } else {
+        res.render('login', { error: 'Credenciais inválidas. Tente novamente.' });
+    }
+};
 
 
-module.exports = { login, loginCreate };
+
+module.exports = { login, loginCreate, loginEntrar};

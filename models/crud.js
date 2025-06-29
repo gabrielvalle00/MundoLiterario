@@ -19,15 +19,21 @@ const crud = {
         }
         return 1;
     },
-    delete(obj, filePath) {
-        const delLivro = this.myData.indexOf(obj);  
-        if (delLivro !== -1) { //vai verificar se no array o livro existe, se não vi dar erro 
-            this.myData.splice(indexToRemove, 1); // essa linha faz remover o livro
-            fs.writeFileSync(filePath, JSON.stringify(this.myData), { encoding: 'utf-8' });
+    delete(id, filePath) {
+        crud.read(filePath);
+        let livros = this.myData.findIndex(l => l.id == id);
+        if (livros != -1) {
+            crud.myData.splice(livros, 1);
+            fs.writeFileSync(filePath, JSON.stringify(crud.myData), { encoding: 'utf-8' });
         } else {
-            console.error("Livro não encontrado!");
+            console.log('O arquvio não foi localizado.')
         }
-    }
+    },
+    selectItem(id, filePath) {
+        crud.read(filePath);
+        let el = this.myData.find((element) => element.id == id);
+        return el;
+    },
 }
 
 module.exports = crud;

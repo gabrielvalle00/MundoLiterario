@@ -3,6 +3,8 @@ const { engine } = require('express-handlebars') //Importando express-handlebars
 
 const cadastroController = require('./controller/cadastro.controller');
 
+const carrinhoController = require('./controller/carrinho.controller');
+
 const cadastroClienteController = require('./controller/cadastroCliente.controller');
 
 const contatoController = require('./controller/contato.controller');
@@ -18,6 +20,10 @@ const homeController = require('./controller/home.controller');
 const loginController = require('./controller/login.controller');
 
 const lojaController = require('./controller/loja.controller');
+
+const pagamentoController = require('./controller/pagamento.controller');
+
+const obrigadaController = require('./controller/obrigada.controller');
 
 const app = express(); //Cria uma instância de aplicativo Express
 const port = 8080; //Criando uma porta
@@ -56,6 +62,8 @@ app.get('/contato', contatoController.contato);
 
 app.get('/funcionario', funcionarioController.funcionario);
 
+app.get('/funcionario/excluir/:id', funcionarioController.excluirProduto)
+
 app.get('/cadastroCliente', cadastroClienteController.cadastroCliente);
 
 app.get('/cadastroProdutos', cadastroProdutosController.cadastroProdutos);
@@ -66,14 +74,25 @@ app.get('/login', loginController.login);
 
 app.get('/loja', lojaController.loja);
 
+app.get('/carrinho', carrinhoController.carrinho);
+
+app.get('/pagamento', pagamentoController.pagamento);
+
+app.get('/obrigada', obrigadaController.obrigada);
+
 app.post('/cadastroProdutos', cadastroProdutosController.cadastroProdutosCreate); //se nao existir essa linha aqui (app.post) o formulario nao tem pra onde ir e vai dar erro
 
 app.post('/cadastro', cadastroController.cadastroCreate);
 
 app.post('/login', loginController.loginCreate);
 
+app.post('/pagamento', pagamentoController.pagamentoCreate);
+
+// app.get('/funcionario', funcionarioController.deletandoLivro);
+
 //porta
 
 app.listen(port, () => {
     console.log(`Servidor rodando na porta ${port}.`);
 });
+

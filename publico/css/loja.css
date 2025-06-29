@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Hepta+Slab:400,700|Lato:400,700&display=swap');
 
-/* Não tenho certeza se gosto da fonte da página, verificar com coleguinhas */
-
-/* Abaixo o problema acontece, esse código de CSS tem 500 linhas cara, 500!!! Então vou tentar localizar cada coisa */
 * {
     box-sizing: border-box;
 }
@@ -15,7 +12,6 @@ body {
     display: flex;
     margin: 0;
     width: 100%;
-    /* Add your background pattern here */
     background-image: linear-gradient(#ffffff 1.1rem, #ccc 1.2rem);
     background-size: 100% 1.2rem;
 }
@@ -25,7 +21,7 @@ body {
 }
 
 header {
-    position: fixed;
+    position:absolute;
     left: 0;
     top: 0;
     right: 0;
@@ -33,9 +29,7 @@ header {
     background: white;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     display: flex;
-    /* none; */
     justify-content: space-between;
-    /* flex-end; */
     align-items: center;
 }
 
@@ -44,27 +38,14 @@ header h1 {
     color: #000000;
 }
 
-
-
-
-
-
 aside {
-    background-color: #ffffff61;
-    width: 0vw;
-    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-    font-family: 'Hepta Slab', Helvetica, Arial;
-    transition: all ease .2s;
-    overflow-x: hidden;
-}
-
-aside.show {
-    width: 30vw;
+    
+    display: none;
+   
 }
 
 .cart--area {
     margin-top: 30px;
-    /* ajuste */
     padding: 20px;
 }
 
@@ -89,9 +70,6 @@ h2 {
     grid-template-columns: repeat(3, 1fr);
 }
 
-/* Box area envolvendo todas as informações da ficha do livro */
-/* Tentei criar um box envolvendo todos os dados, mas nn funcionou */
-
 .book-item {
     text-align: center;
     max-width: 250px;
@@ -105,16 +83,6 @@ h2 {
     align-items: center;
     text-decoration: none;
 }
- /* Esse código é responsavel pelos circulos ao redor do livro, removi pois estava brega (Código não removido por que quero a opnião do grupo) */
-
-/* .book-item--img {
-    width: 200px;
-    height: 200px;
-    background-color: rgb(255, 255, 255);
-    border-radius: 10px;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    box-shadow: 0px 50px 50px rgba(0, 0, 0, 0.2);
-} */
 
 .book-item--img img {
     width: 100%;
@@ -282,7 +250,7 @@ h2 {
     font-size: 17px;
     outline: 0;
     cursor: pointer;
-    padding: 0px 10px;
+    padding: 0 10px;
     color: #333;
 }
 
@@ -290,7 +258,7 @@ h2 {
     line-height: 30px;
     font-size: 12px;
     font-weight: bold;
-    padding: 0px 5px;
+    padding: 0 5px;
     color: #000;
 }
 
@@ -303,13 +271,15 @@ h2 {
     display: inline-block;
     cursor: pointer;
     margin-right: 30px;
+    transition: all ease .2s;
 }
 
 .bookInfo--addButton:hover {
     background-color: #7080969a;
 }
 
-.bookInfo--cancelButton {
+.bookInfo--cancelButton,
+.bookInfo--cancelMobileButton {
     display: inline-block;
     cursor: pointer;
 }
@@ -355,7 +325,7 @@ h2 {
     font-size: 17px;
     outline: 0;
     cursor: pointer;
-    padding: 0px 10px;
+    padding: 0 10px;
     color: #333;
 }
 
@@ -363,7 +333,7 @@ h2 {
     line-height: 30px;
     font-size: 12px;
     font-weight: bold;
-    padding: 0px 5px;
+    padding: 0 5px;
     color: #000;
 }
 
@@ -386,29 +356,33 @@ h2 {
     font-weight: bold;
 }
 
-.cart--finalizar {
+a.cart--finalizar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 20px 30px;
     border-radius: 20px;
     background-color: #000000;
     color: #FFF;
     cursor: pointer;
-    text-align: center;
     margin-top: 20px;
     border: 2px solid #3a443c;
     transition: all ease .2s;
+    text-decoration: none;
 }
 
-.cart--finalizar:hover {
+a.cart--finalizar:hover {
     background-color: #7080969a;
 }
 
-@media (max-width:1000px) {
+
+@media (max-width: 1000px) {
     .book-area {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media (max-width:840px) {
+@media (max-width: 840px) {
     body {
         flex-direction: column;
     }
@@ -425,11 +399,6 @@ h2 {
         display: flex;
     }
 
-    /*
-    main {
-        padding-top:60px;
-    }
-    */
     aside {
         width: auto;
         position: fixed;
@@ -440,17 +409,8 @@ h2 {
         transition: all ease .2s;
     }
 
-    aside.show {
-        width: auto;
-    }
 
-    .cart--area {
-        width: 100vw;
-    }
 
-    .menu-closer {
-        display: block;
-    }
 
     .bookWindowArea {
         justify-content: flex-start;
@@ -481,7 +441,7 @@ h2 {
 
     .bookInfo--qtarea button {
         font-size: 25px;
-        padding: 0px 25px;
+        padding: 0 25px;
     }
 
     .bookInfo--qt {
@@ -503,10 +463,9 @@ h2 {
     .bookInfo--cancelMobileButton {
         display: block;
     }
-
 }
 
-@media (max-width:450px) {
+@media (max-width: 450px) {
     header h1 {
         font-size: 1.5rem;
     }
@@ -514,11 +473,10 @@ h2 {
     .menu-openner {
         font-size: 1.5rem;
         cursor: pointer;
-
     }
 }
 
-@media (max-width:380px) {
+@media (max-width: 380px) {
     header h1 {
         font-size: 1rem;
     }
@@ -533,18 +491,15 @@ h2 {
     width: 50px;
 }
 
-/* acrescimo */
-
 footer {
     background-color: #fafafa;
     box-shadow: rgba(33, 35, 38, 0.1) 0px -10px 10px -5px;
-    display: block;
     height: 10vh;
-
     padding: 20px;
     text-align: center;
     width: 100%;
-    position: absolute;
-    bottom: 0;
+    position:fixed;
+    margin-bottom: 1000px;
     left: 0;
+
 }

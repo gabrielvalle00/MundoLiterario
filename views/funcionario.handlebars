@@ -1,4 +1,4 @@
-{{#section 'styles'}}
+ {{#section 'styles'}}
 <link rel="stylesheet" href="css/funcionario.css">
 {{/section}}
 
@@ -63,7 +63,7 @@
                     <span class="title">Cadastro Clientes</span>
                 </a>
             </li>
-            
+
             <li>
                 <a href="/">
                     <span class="icon">
@@ -104,9 +104,10 @@
                 <td>{{precoD}}</td>
                 <td>{{precoC}}</td>
                 <td>{{precoE}}</td>
-                <td><button><ion-icon name="trash-outline"></ion-icon></button></td>
+                <td><a method="get" href="/funcionario/excluir/{{id}}"><input type="button" value="Excluir" id="btn"></a></td>
             </tr>
             {{/each}}
+
         </table>
 
     </div>
